@@ -8,6 +8,9 @@ function App() {
     const fetchUsers = async () => {
       try {
         const res = await fetch(`${API_BASE_URL}/api/users/getAllUsers`);
+        if (!res.ok) {
+          throw new Error("API failed");
+        }
         const data = await res.json();
         console.log("API Response:", data);
         setUsers(data.data || []);
