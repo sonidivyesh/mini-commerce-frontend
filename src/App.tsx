@@ -3,7 +3,6 @@ import API_BASE_URL from "./config/api";
 
 function App() {
   const [users, setUsers] = useState<any[]>([]);
-
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -12,7 +11,7 @@ function App() {
           throw new Error("API failed");
         }
         const data = await res.json();
-        // console.log("API Response:", data);
+        console.log("API Response:", data);
         setUsers(data.data || []);
       } catch (error) {
         console.error("API Error:", error);
