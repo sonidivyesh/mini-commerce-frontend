@@ -3,7 +3,6 @@ import API_BASE_URL from "./config/api";
 
 function App() {
   const [users, setUsers] = useState<any[]>([]);
-  const x = ;
   useEffect(() => {
     const fetchUsers = async () => {
       try {
